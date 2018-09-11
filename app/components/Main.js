@@ -31,8 +31,9 @@ class Main extends React.Component {
 			})
 		})
 
+		//shuffle the initial deck and clear the dealt cards array
 		this.setState({
-			deck: newDeck,
+			deck: newDeck.sort(() => 0.5 - Math.random()),
 			dealtCards: []
 		});
 	}

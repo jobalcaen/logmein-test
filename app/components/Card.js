@@ -5,9 +5,11 @@ import diamond from '../images/diamond.svg';
 import spade from '../images/spade.svg';
 
 
-
+// PureComponent here to avoid any unecessary renders of the cards that were making the app slow
 class Card extends React.PureComponent {
 	render () {
+
+		// return a different svg for earcg suite
 		const suit = (suit) => {
 			switch (suit) {
 				case 'Spades':
