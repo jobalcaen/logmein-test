@@ -7,7 +7,7 @@ class Main extends React.Component {
 		super(props);
 		this.state = {
 			deck: [],
-			dealtCards: [],
+			dealtCards: []
 		};
 
 		this.generateDeck = this.generateDeck.bind(this);
@@ -16,6 +16,7 @@ class Main extends React.Component {
 	}
 
 	generateDeck() {
+		console.log('generate deck');
 		const cardValues = ['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace'] ;
 		const suits = ['Diamonds','Hearts','Clubs','Spades'];
 		const newDeck = [];
@@ -54,9 +55,9 @@ class Main extends React.Component {
 		
 			const randomInt = getRandomInt(deck.length);
 
-			// pick a random card
+			// pick a random card from the array
 			const dealtCard =  deck[randomInt];
-			
+
 			// remove the card that was dealt from the deck, change in place
 			deck.splice(randomInt,1);
 
@@ -65,8 +66,9 @@ class Main extends React.Component {
 				dealtCards: [...this.state.dealtCards, dealtCard]
 			})
 
-			}
+		}
 	}
+
 
 	componentDidMount() {
 		this.generateDeck();

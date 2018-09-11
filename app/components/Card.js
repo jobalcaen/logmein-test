@@ -27,9 +27,6 @@ const Card = (props) => {
 		<div className='card'>
 			{suit(props.card.suit)}
 			{props.card.value}
-			 <i className="fas fa-spade red"></i>
-
-
 		</div>
 	)
 }
