@@ -6,29 +6,33 @@ import spade from '../images/spade.svg';
 
 
 
-const Card = (props) => {
-
-	const suit = (suit) => {
-		switch (suit) {
-			case 'Spades':
-				return <object type="image/svg+xml" data={spade} className="suit-icon"/>;
-			case 'Hearts':
-				return <object type="image/svg+xml" data={heart} className="suit-icon"/>;
-			case 'Clubs':
-				return 	<object type="image/svg+xml" data={club} className="suit-icon"/>;
-			case 'Diamonds': 
-				return <object type="image/svg+xml" data={diamond} className="suit-icon"/>;
-			default:
-				return 'err';
+class Card extends React.PureComponent {
+	render () {
+		const suit = (suit) => {
+			switch (suit) {
+				case 'Spades':
+					return <object type="image/svg+xml" data={spade} className="suit-icon"/>;
+				case 'Hearts':
+					return <object type="image/svg+xml" data={heart} className="suit-icon"/>;
+				case 'Clubs':
+					return 	<object type="image/svg+xml" data={club} className="suit-icon"/>;
+				case 'Diamonds': 
+					return <object type="image/svg+xml" data={diamond} className="suit-icon"/>;
+				default:
+					return 'err';
+			}
 		}
+
+		return (
+			<div className='card'>
+				{suit(this.props.card.suit)}
+				{this.props.card.value}
+			</div>
+		)		
 	}
 
-	return (
-		<div className='card'>
-			{suit(props.card.suit)}
-			{props.card.value}
-		</div>
-	)
+
+
 }
 
 
