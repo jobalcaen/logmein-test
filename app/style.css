@@ -1,0 +1,74 @@
+#root {
+	font-family: arial;
+}
+
+.grid-container {
+	display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto auto;
+}    
+
+#deck-cards-box {
+	grid-row: 1 / 2;
+}
+
+#dealt-cards-box {
+	grid-row: 2 / 3;
+}
+
+#controls-box {
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	margin-left: 3em;
+}
+
+#last-dealt-box {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+}
+
+.cards-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+
+}
+
+.card {
+	height: 7em;
+    width: 5em;
+    border: 1px solid black;
+    margin-bottom: 2em;
+    margin-right: -2em;
+    background-color: white;
+}
+
+.card:nth-child(even) {
+    position: relative;
+    top: 1em;
+}
+
+.green {
+	background-color: green;
+}
+
+.red {
+	background-color: red;
+}
+
+.black {
+	color: black;
+}
+
+.suit-icon {
+	height: 1em;
+
+}
+
+.button {
+    border-style: ridge;
+    border-radius: 60px;
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
