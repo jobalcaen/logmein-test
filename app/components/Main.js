@@ -85,14 +85,14 @@ class Main extends React.Component {
 			<div className="grid-container">
 
 				<div id='deck-cards-box'>
-					<h1>Deck of Cards</h1>
+					<h1>Deck of cards</h1>
 						<div className='cards-list'>
 						{this.state.deck == 0 ? 'No more cards left to deal...' : deckCards}
 						</div>
 				</div>
 
 				<div id='dealt-cards-box'>
-					<h1>Dealt Cards</h1>
+					<h1>Dealt cards</h1>
 					<div className='cards-list'>
 						{dealtCards}
 					</div>
