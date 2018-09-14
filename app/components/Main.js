@@ -16,7 +16,6 @@ class Main extends React.Component {
 	}
 
 	generateDeck() {
-		console.log('generate deck');
 		const cardValues = ['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace'] ;
 		const suits = ['Diamonds','Hearts','Clubs','Spades'];
 		const newDeck = [];
@@ -31,15 +30,36 @@ class Main extends React.Component {
 			})
 		})
 
-		//shuffle the initial deck and clear the dealt cards array
+		let i = newDeck.length, j, t;
+
+		while(i){
+			j = Math.floor(Math.random() * i--);
+
+			t = newDeck[j];
+			newDeck[j] = newDeck[i];
+			newDeck[i] = t;
+		}
+		
 		this.setState({
-			deck: newDeck.sort(() => 0.5 - Math.random()),
+			deck: newDeck,
 			dealtCards: []
 		});
 	}
 
 	shuffle() {
-		this.setState({deck: [...this.state.deck].sort(() => 0.5 - Math.random())});
+		let arr = [...this.state.deck];
+		console.log('arr ',arr);
+		let i = [...this.state.deck].length, j, t;
+
+		while(i){
+			j = Math.floor(Math.random() * i--);
+
+			t = arr[j];
+			arr[j] = arr[i];
+			arr[i] = t;
+		}
+
+		this.setState({deck: arr});
 	}
 
 	dealOneCard() {
@@ -49,24 +69,14 @@ class Main extends React.Component {
 			// do nothing if there are no more cards in the deck
 			null
 		} else {
-			const getRandomInt = (max) => {
-				// get a ranom integer that is within the index range of the deck
-  				return Math.floor(Math.random() * Math.floor(max));
-			}
-		
-			const randomInt = getRandomInt(deck.length);
+			const dealtCard =  deck[deck.length -1];
 
-			// pick a random card from the array
-			const dealtCard =  deck[randomInt];
-
-			// remove the card that was dealt from the deck, change in place
-			deck.splice(randomInt,1);
+			deck.pop();
 
 			this.setState({
 				deck: [...deck],
 				dealtCards: [...this.state.dealtCards, dealtCard]
 			})
-
 		}
 	}
 
