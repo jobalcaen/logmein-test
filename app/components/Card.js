@@ -6,7 +6,7 @@ import spade from '../images/spade.svg';
 
 
 // PureComponent here to avoid any unecessary renders of the cards that were making the app slow
-class Card extends React.PureComponent {
+class Card extends React.Component {
 	render () {
 
 		// return a different svg for earch suite
