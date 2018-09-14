@@ -9,7 +9,7 @@ import spade from '../images/spade.svg';
 class Card extends React.PureComponent {
 	render () {
 
-		// return a different svg for earcg suite
+		// return a different svg for earch suite
 		const suit = (suit) => {
 			switch (suit) {
 				case 'Spades':
