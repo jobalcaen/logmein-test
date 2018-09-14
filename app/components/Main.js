@@ -48,7 +48,6 @@ class Main extends React.Component {
 
 	shuffle() {
 		let arr = [...this.state.deck];
-		console.log('arr ',arr);
 		let i = [...this.state.deck].length, j, t;
 
 		while(i){
@@ -110,7 +109,7 @@ class Main extends React.Component {
 
 				<Controls
 					dealt={this.state.dealtCards}
- 					deck={this.state.deck}
+ 					deckLength={this.state.deck.length}
 					shuffle={this.shuffle}
 					deal={this.dealOneCard}
 					reset={this.generateDeck}

@@ -5,7 +5,7 @@ const Controls = (props) =>(
 		<div onClick={props.shuffle} className='button green'>SHUFFLE</div>
 	
 		{
-			props.deck == 0 ? <div 
+			props.deckLength == 0 ? <div 
 				onClick={ () => {
 						if(window.confirm('Are you sure you wish to reset the deck?')) { props.reset() } 
 					} 
